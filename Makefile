@@ -3,7 +3,11 @@ PREFIX := base-
 SRCS = $(wildcard *.dockerfile)
 TGTS = $(patsubst %.dockerfile, %, $(SRCS))
 
-all: $(patsubst %, tag/%, $(TGTS))
+default: tag
+
+build: $(patsubst %, build/%, $(TGTS))
+tag: $(patsubst %, tag/%, $(TGTS))
+push: $(patsubst %, push/%, $(TGTS))
 
 define make-build-rule
 
