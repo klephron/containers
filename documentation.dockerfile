@@ -1,0 +1,20 @@
+FROM ubuntu:22.04
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get -y update && apt-get -y install --no-install-recommends \
+  ca-certificates curl perl \
+  && rm -rf /var/lib/apt/lists/*
+
+# RUN cd ~ \
+#   && curl -L -o install-tl-unx.tar.gz https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
+#   && zcat < install-tl-unx.tar.gz | tar xf - \
+#   && cd install-tl-* && perl ./install-tl --no-interaction \
+#   && rm -rf install-tl-unx.tar.gz && rm -rf ~/install-tl-* \
+#   && echo "export PATH=\"$PATH:$(echo /usr/local/texlive/*/bin/x86_64-linux)\"" >> /etc/profile.d/99-texlive.sh \
+#   && chmod +x /etc/profile.d/99-texlive.sh
+
+RUN apt-get -y update && apt-get -y upgrade && apt-get -y install --no-install-recommends \
+  build-essential pandoc fontconfig \
+  fonts-liberation fonts-dejavu libreoffice \
+  && rm -rf /var/lib/apt/lists/*
