@@ -16,5 +16,5 @@ RUN cd ~ \
 
 RUN apt-get -y update && apt-get -y upgrade && apt-get -y install --no-install-recommends \
   build-essential pandoc fontconfig \
-  fonts-liberation fonts-dejavu libreoffice \
+  fonts-liberation fonts-dejavu libreoffice poppler-utils \
   && rm -rf /var/lib/apt/lists/*
