@@ -14,5 +14,8 @@
     "ghcr.io/devcontainers-contrib/features/fzf:latest": {},
     "ghcr.io/social-anthrax/eza-devcontainer/eza:0": {},
     "ghcr.io/jungaretti/features/ripgrep:1": {}
-  }
+  },
+  "mounts": [
+    "type=bind,source=${localEnv:HOME}/.ssh,target=/home/user/.ssh,readonly"
+  ]
 }

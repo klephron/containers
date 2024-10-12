@@ -11,5 +11,8 @@
       "upgradePackages": false,
       "username": "user"
     }
-  }
+  },
+  "mounts": [
+    "type=bind,source=${localEnv:HOME}/.ssh,target=/home/user/.ssh,readonly"
+  ]
 }
