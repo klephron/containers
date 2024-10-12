@@ -15,6 +15,7 @@ RUN cd ~ && curl -L -O https://github.com/antlr/antlr3/archive/refs/tags/3.5.3.t
   && autoupdate && autoreconf -fi && LDFLAGS="-I/usr/include/x86_64-linux-gnu" CPPFLAGS="-I/usr/include/x86_64-linux-gnu" ./configure --enable-64bit \
   && make && make install \
   && mkdir -p /usr/local/maven/m2/repository && cd ~/antlr3-3.5.3 && mvn package install -Dmaven.test.skip=true -Dmaven.repo.local=/usr/local/maven/m2/repository \
+  && find /usr/local/maven/m2/repository -type f ! -name "antlr-complete*" -exec rm -rf {} + \
   && rm -rf ~/antlr3-3.5.3
 
 # Update LD_LIBRARY_PATH
