@@ -1,7 +1,7 @@
-REGISTRY := zubrailx
-PREFIX := base-
-SRCS = $(wildcard *.dockerfile)
-TGTS = $(patsubst %.dockerfile, %, $(SRCS))
+REGISTRY := klephron
+PREFIX :=
+SRCS = $(wildcard Dockerfile.*)
+TGTS = $(patsubst Dockerfile.%, %, $(SRCS))
 
 default: tag
 
@@ -11,7 +11,7 @@ push: $(patsubst %, push/%, $(TGTS))
 
 define make-build-rule
 
-build/$(1): $(1).dockerfile
+build/$(1): Dockerfile.$(1)
 	docker build -f $$< -t $$(PREFIX)$(1) .
 
 endef
