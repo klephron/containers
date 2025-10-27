@@ -13,6 +13,6 @@
     }
   },
   "mounts": [
-    "type=bind,source=${localEnv:HOME}/.ssh,target=/home/user/.ssh,readonly"
+    "type=bind,source=${localEnv:HOME}/.ssh,target=/home/dev/.ssh,readonly"
   ]
 }
