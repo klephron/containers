@@ -1,6 +1,7 @@
-REGISTRY := klephron
-SRCS = $(wildcard Dockerfile.*)
-TGTS = $(patsubst Dockerfile.%, %, $(SRCS))
+REGISTRY ?= klephron
+
+SRCS := $(wildcard Dockerfile.*)
+TGTS := $(patsubst Dockerfile.%, %, $(SRCS))
 
 default: tag
 
