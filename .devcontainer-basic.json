@@ -1,6 +1,6 @@
 {
-  "build": { "dockerfile": "dockerfile" },
-  "remoteUser": "user",
+  "build": { "dockerfile": "Dockerfile" },
+  "remoteUser": "dev",
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {},
     "ghcr.io/devcontainers/features/common-utils:2": {
@@ -9,7 +9,7 @@
       "installOhMyZsh": false,
       "installOhMyZshConfig": false,
       "upgradePackages": false,
-      "username": "user"
+      "username": "dev"
     }
   },
   "mounts": [
