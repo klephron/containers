@@ -14,12 +14,12 @@ make push/antlr3
 
 From multiple dockerfiles. Works by longest substring substitution and `Dockerfile` merging.
 
-For `Dockerfile.antlr3` and `Dockerfile.documentation`:
+For `Dockerfile.antlr3` and `Dockerfile.devcontainer`:
 
 ```sh
-make build/antlr3-documentation
-make tag/antlr3-documentation
-make push/antlr3-documentation
+make build/antlr3-devcontainer
+make tag/antlr3-devcontainer
+make push/antlr3-devcontainer
 ```
 
 > See `docker.sh` for details.
