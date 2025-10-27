@@ -13,10 +13,8 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
 
 ENV LANG=en_US.UTF-8
 
-# Users & passwords (root, dev)
+# Users & passwords (dev)
 RUN echo "root:root" | chpasswd
-RUN id -u dev >/dev/null 2>&1 || useradd -ms /bin/bash dev
-RUN echo "dev:dev" | chpasswd
 
 # SSH
 RUN apt-get -y update && apt-get -y upgrade && apt-get -y install --no-install-recommends \

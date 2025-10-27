@@ -8,10 +8,10 @@
       "installOhMyZsh": false,
       "installOhMyZshConfig": false,
       "upgradePackages": false,
-      "username": "dev"
+      "username": "root"
     }
   },
-  "remoteUser": "dev",
+  "remoteUser": "root",
   "mounts": [
     "type=bind,source=${localEnv:HOME}/.ssh,target=/home/dev/.ssh,readonly"
   ]
