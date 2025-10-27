@@ -43,5 +43,10 @@ push/%:
 	@image=$*; \
 	./docker.sh push $(REGISTRY) "$$image" $(TGTS)
 
+all/%:
+	@$(MAKE) build/$*
+	@$(MAKE) tag/$*
+	@$(MAKE) push/$*
+
 list:
 	@echo $(TGTS)

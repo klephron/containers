@@ -14,6 +14,10 @@ RUN cd ~ \
   && echo "export PATH=\"$PATH:$(echo /usr/local/texlive/*/bin/x86_64-linux)\"" >> /etc/profile.d/99-texlive.sh \
   && chmod +x /etc/profile.d/99-texlive.sh
 
+# fixup
+RUN echo "export PATH=\"$(echo /usr/local/texlive/*/bin/x86_64-linux):\$PATH\"" > /etc/profile.d/99-texlive.sh \
+  && chmod +x /etc/profile.d/99-texlive.sh
+
 RUN apt-get -y update && apt-get -y upgrade && apt-get -y install --no-install-recommends \
   build-essential pandoc fontconfig \
   fonts-liberation fonts-dejavu \
