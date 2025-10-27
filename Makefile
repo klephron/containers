@@ -33,15 +33,15 @@ $(foreach target, $(TGTS), $(eval $(call make-push-rule,$(target))))
 
 build/%:
 	@image=$*; \
-	./docker.sh build $(REGISTRY) "$$image" $$(TGTS)
+	./docker.sh build $(REGISTRY) "$$image" $(TGTS)
 
 tag/%:
 	@image=$*; \
-	./docker.sh tag $(REGISTRY) "$$image" $$(TGTS)
+	./docker.sh tag $(REGISTRY) "$$image" $(TGTS)
 
 push/%:
 	@image=$*; \
-	./docker.sh push $(REGISTRY) "$$image" $$(TGTS)
+	./docker.sh push $(REGISTRY) "$$image" $(TGTS)
 
 list:
 	@echo $(TGTS)
