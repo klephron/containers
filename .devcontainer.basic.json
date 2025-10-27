@@ -1,6 +1,5 @@
 {
   "build": { "dockerfile": "Dockerfile" },
-  "remoteUser": "dev",
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {},
     "ghcr.io/devcontainers/features/common-utils:2": {
@@ -12,6 +11,7 @@
       "username": "dev"
     }
   },
+  "remoteUser": "dev",
   "mounts": [
     "type=bind,source=${localEnv:HOME}/.ssh,target=/home/dev/.ssh,readonly"
   ]
