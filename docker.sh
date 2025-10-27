@@ -29,7 +29,7 @@ case "$operation" in
       fi;
     done;
     if [[ ${#dockerfiles[@]} -eq 0 || -n "$tmp" ]]; then
-      echo "unable to substitute $" >&2; exit 1;
+      echo "unable to substitute $image" >&2; exit 1;
     fi;
 
     if [[ ${#dockerfiles[@]} -ne 1 ]]; then
