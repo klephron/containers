@@ -25,3 +25,8 @@ RUN echo "Port 2222" >> /etc/ssh/sshd_config && echo "PermitRootLogin yes" >> /e
 EXPOSE 2222
 
 ENTRYPOINT ["bash", "-c", "service ssh restart && /usr/bin/bash" ]
+
+# Features
+RUN apt-get -y update && apt-get -y upgrade && apt-get -y install --no-install-recommends \
+  luarocks \
+  && rm -rf /var/lib/apt/lists/*
